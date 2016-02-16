@@ -28,7 +28,7 @@ bool CApp::initializeSDL() {
     if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
     {
         cout << "SDL could not initialize! SDL_Error: " << SDL_GetError() << endl;
-        return 1;
+        return false;
     }
     else
     {
@@ -37,7 +37,7 @@ bool CApp::initializeSDL() {
         if( window == NULL )
         {
             cout << "Window could not be created! SDL_Error: " << SDL_GetError() << endl;
-            return 1;
+            return false;
         }
         else
         {
@@ -51,7 +51,7 @@ bool CApp::initializeSDL() {
         }
     }
     
-    return 0;
+    return true;
 }
 
 void CApp::update() {

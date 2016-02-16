@@ -11,37 +11,43 @@
  * Created on 16. helmikuuta 2016, 15:44
  */
 
+// Standard libraries
 #include <cstdlib>
 #include <iostream>
 
-// Remember compiler options:
-// -lmingw32 -lSDL2main -lSDL2.dll
-#include <SDL2/SDL.h>
-
 using namespace std;
 
-//Screen dimension constants
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+// SDL libraries
+#include <SDL2/SDL.h>
+
+// Our Classes
+#include "CApp.h"
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    // Initialize SDL
-    SDL_Window* window = NULL;
-    SDL_Surface* screenSurface = NULL;
+    // Initialize
+    CApp Client;
+    Client.bRunning = Client.initializeSDL();
     
-    if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-    {
-        cout << "SDL could not initialize! SDL_Error: " << SDL_GetError() << endl;
-        return 1;
+    
+    // Main loop
+    int i = 0;
+    
+    while ( Client.bRunning ) {
+        Client.update();
+        SDL_Delay( 20 );
+        
+        i++;
+        if ( i > 100 ) {
+            Client.bRunning = false;
+        }
     }
     
-    //
     
-    // End program
-    cout << "All good! Goodbye!" << endl;
+    // Close
+    Client.shutdown();
     
     return 0;
 }
