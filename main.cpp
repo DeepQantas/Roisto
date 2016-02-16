@@ -11,19 +11,43 @@
  * Created on 16. helmikuuta 2016, 15:44
  */
 
+// Standard libraries
 #include <cstdlib>
 #include <iostream>
 
 using namespace std;
 
+// SDL libraries
+#include <SDL2/SDL.h>
+
+// Our Classes
+#include "CApp.h"
+
 /*
  * 
  */
 int main(int argc, char** argv) {
-    cout << "Hello World!\n";
-    cout << "Test commit from 'main' branch\n";
-    cout << "Conflict from 'main'\n";
-    cout << "Conflict test 'SDL_main'\n";
+    // Initialize
+    CApp Client;
+    Client.bRunning = Client.initializeSDL();
+    
+    
+    // Main loop
+    int i = 0;
+    
+    while ( Client.bRunning ) {
+        Client.update();
+        SDL_Delay( 20 );
+        
+        i++;
+        if ( i > 100 ) {
+            Client.bRunning = false;
+        }
+    }
+    
+    
+    // Close
+    Client.shutdown();
     
     return 0;
 }

@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/_ext/32ef9c79/CApp.o \
 	${OBJECTDIR}/main.o
 
 
@@ -52,7 +53,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-lmingw32 -lSDL2main -lSDL2.dll
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -61,6 +62,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roisto.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roisto ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/_ext/32ef9c79/CApp.o: /C/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/32ef9c79
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/32ef9c79/CApp.o /C/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
