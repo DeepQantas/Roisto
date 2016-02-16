@@ -27,6 +27,3 @@
 *.exe
 *.out
 *.app
-
-# NetBeans generated files
-private.xml
