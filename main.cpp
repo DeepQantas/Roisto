@@ -22,6 +22,7 @@ using namespace std;
 int main(int argc, char** argv) {
     cout << "Hello World!\n";
     cout << "Test commit from 'main' branch\n";
+    cout << "Conflict from 'main'\n";
     cout << "Conflict test 'SDL_main'\n";
     
     return 0;
