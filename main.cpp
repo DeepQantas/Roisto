@@ -20,19 +20,29 @@
 
 using namespace std;
 
+//Screen dimension constants
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
+
 /*
  * 
  */
 int main(int argc, char** argv) {
-    cout << "Hello World!" << endl;
+    // Initialize SDL
+    SDL_Window* window = NULL;
+    SDL_Surface* screenSurface = NULL;
     
-    if (SDL_Init(SDL_INIT_VIDEO) != 0){
-        cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
+    if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+    {
+        cout << "SDL could not initialize! SDL_Error: " << SDL_GetError() << endl;
         return 1;
     }
-    SDL_Quit();
     
-    cout << "Goodbye!" << endl;
+    //
+    
+    // End program
+    cout << "All good! Goodbye!" << endl;
+    
     return 0;
 }
 
