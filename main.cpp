@@ -14,14 +14,25 @@
 #include <cstdlib>
 #include <iostream>
 
+// Remember compiler options:
+// -lmingw32 -lSDL2main -lSDL2.dll
+#include <SDL2/SDL.h>
+
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    cout << "Hello World!\n";
+    cout << "Hello World!" << endl;
     
+    if (SDL_Init(SDL_INIT_VIDEO) != 0){
+        cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
+        return 1;
+    }
+    SDL_Quit();
+    
+    cout << "Goodbye!" << endl;
     return 0;
 }
 
