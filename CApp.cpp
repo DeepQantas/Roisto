@@ -79,13 +79,11 @@ void CApp::shutdown() {
 SDL_Surface* CApp::loadMedia()
 {
     SDL_Surface* surf;
+    surf = IMG_Load("resources/windrunner_by_lddmitry.jpg");
     
-    // Todo: Variable filename
-    surf = SDL_LoadBMP( "resources/windrunner_by_lddmitry.bmp" );
-    if( surf == NULL )
-    {
-        cout << "Unable to load image! SDL Error: " << SDL_GetError() << endl;
-        return NULL;
+    if( !surf ) {
+        cout << "IMG_Load: " << SDL_GetError() << endl;
+        
     }
     
     return surf;

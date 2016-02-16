@@ -18,7 +18,8 @@
 using namespace std;
 
 // SDL libraries
-#include <SDL2/SDL.h>
+#include <SDL.h>
+#include "SDL_image.h"
 
 // Our Classes
 #include "CApp.h"

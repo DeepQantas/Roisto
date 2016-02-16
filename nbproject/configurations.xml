@@ -37,12 +37,13 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>C:/MinGW/include/SDL2</pElem>
+          </incDir>
+        </ccTool>
         <linkerTool>
-          <linkerLibItems>
-            <linkerLibLibItem>mingw32</linkerLibLibItem>
-            <linkerLibLibItem>SDL2main</linkerLibLibItem>
-            <linkerLibLibItem>SDL2.dll</linkerLibLibItem>
-          </linkerLibItems>
+          <commandLine>-lmingw32 -lSDL2main -lSDL2 -lSDL2_image</commandLine>
         </linkerTool>
       </compileType>
       <item path="C:/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp"

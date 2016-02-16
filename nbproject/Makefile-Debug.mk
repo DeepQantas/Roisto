@@ -53,7 +53,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lmingw32 -lSDL2main -lSDL2.dll
+LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -61,17 +61,17 @@ LDLIBSOPTIONS=-lmingw32 -lSDL2main -lSDL2.dll
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roisto.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roisto ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roisto ${OBJECTFILES} ${LDLIBSOPTIONS} -lmingw32 -lSDL2main -lSDL2 -lSDL2_image
 
 ${OBJECTDIR}/_ext/32ef9c79/CApp.o: /C/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/32ef9c79
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/32ef9c79/CApp.o /C/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp
+	$(COMPILE.cc) -g -I/C/MinGW/include/SDL2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/32ef9c79/CApp.o /C/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I/C/MinGW/include/SDL2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
