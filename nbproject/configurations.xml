@@ -4,7 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>C:/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.h</itemPath>
+      <itemPath>CApp.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +13,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>C:/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp</itemPath>
+      <itemPath>CApp.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -46,15 +46,9 @@
           <commandLine>-lmingw32 -lSDL2main -lSDL2 -lSDL2_image</commandLine>
         </linkerTool>
       </compileType>
-      <item path="C:/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="CApp.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="C:/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="CApp.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -79,15 +73,9 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="C:/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
+      <item path="CApp.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="C:/Users/Teemu.oma-PC/Documents/NetBeansProjects/roisto/CApp.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="CApp.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
