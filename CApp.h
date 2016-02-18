@@ -38,13 +38,18 @@ public:
     virtual ~CApp();
 
     bool initializeSDL();
-    void update();
+    void handleEvents();
+    void draw();
+    void updateScreen();
     void shutdown();
-
+    
     bool bRunning;
     
 private:
-    SDL_Window* window;    
+    SDL_Window* window;
+    
+    TileTexture* tiles;
+    int startingTile, tileOffset;
 };
 
 #endif /* CAPP_H */

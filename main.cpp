@@ -27,13 +27,11 @@ int main(int argc, char** argv) {
     int i = 0;
     
     while ( Client.bRunning ) {
-        Client.update();
-        SDL_Delay( 20 );
+        Client.handleEvents();
+        Client.draw();
+        Client.updateScreen();
         
-        i++;
-        if ( i > 100 ) {
-            Client.bRunning = false;
-        }
+        SDL_Delay( 33 );
     }
     
     

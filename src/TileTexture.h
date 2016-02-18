@@ -14,6 +14,16 @@
 #ifndef TILETEXTURE_H
 #define TILETEXTURE_H
 
+// Standard libraries
+#include <cstdlib>
+#include <iostream>
+
+// SDL libraries
+#include <SDL.h>
+#include "SDL_image.h"
+
+// Our headers
+#include "Globals.h"
 #include "CApp.h"
 
 using namespace std;
