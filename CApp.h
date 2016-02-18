@@ -22,30 +22,29 @@
 #include <SDL.h>
 #include "SDL_image.h"
 
-// Our classes
+// Our headers
+#include "Globals.h"
 #include "TileTexture.h"
 
 const int SCREEN_WIDTH = 1024;
 const int SCREEN_HEIGHT = 768;
 
-using namespace std;
 
+using namespace std;
 
 class CApp {
 public:
     CApp();
     virtual ~CApp();
-    
+
     bool initializeSDL();
     void update();
     void shutdown();
-    SDL_Surface* loadMedia(); // Todo: move to its own file
-    
+
     bool bRunning;
     
 private:
-    SDL_Window* window;
-    SDL_Surface* screenSurface;
+    SDL_Window* window;    
 };
 
 #endif /* CAPP_H */

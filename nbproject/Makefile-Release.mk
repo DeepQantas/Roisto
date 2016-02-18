@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/CApp.o \
+	${OBJECTDIR}/Globals.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/TileTexture.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/CApp.o: CApp.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CApp.o CApp.cpp
+
+${OBJECTDIR}/Globals.o: Globals.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Globals.o Globals.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

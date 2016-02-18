@@ -11,26 +11,16 @@
  * Created on 16. helmikuuta 2016, 15:44
  */
 
-// Standard libraries
-#include <cstdlib>
-#include <iostream>
-
-using namespace std;
-
-// SDL libraries
-#include <SDL.h>
-#include "SDL_image.h"
-
-// Our Classes
 #include "CApp.h"
 
+using namespace std;
 /*
  * 
  */
 int main(int argc, char** argv) {
     // Initialize
     CApp Client;
-    Client.bRunning = Client.initializeSDL();
+    Client.bRunning = Client.initializeSDL();    
     
     
     // Main loop

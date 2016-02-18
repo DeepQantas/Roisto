@@ -5,7 +5,6 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>CApp.h</itemPath>
-      <itemPath>src/TileTexture.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -15,8 +14,18 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>CApp.cpp</itemPath>
-      <itemPath>src/TileTexture.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -54,6 +63,10 @@
       </item>
       <item path="CApp.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Globals.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Globals.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/TileTexture.cpp" ex="false" tool="1" flavor2="0">
@@ -84,6 +97,10 @@
       <item path="CApp.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CApp.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Globals.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Globals.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

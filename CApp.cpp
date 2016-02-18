@@ -15,7 +15,6 @@
 
 CApp::CApp() {
     window = NULL;
-    screenSurface = NULL;
     
     bRunning = true;
 }
@@ -43,17 +42,21 @@ bool CApp::initializeSDL() {
         {
             //Get window surface
             screenSurface = SDL_GetWindowSurface( window );
-
-            // Load image and draw it on screen
-            //SDL_Surface* surf = loadMedia();
-            //SDL_BlitSurface( surf, NULL, screenSurface, NULL );
+            
+            if ( screenSurface ) {
+                cout << "Got a screenSurface!" << endl;
+            }
+            else {
+                cout << "screenSurface == NULL" << endl;
+                return false;
+            }
             
             // Create tiled texture
             TileTexture* tiles = TileTexture::loadTileTexture("resources/terrain.png");
             
             if ( tiles != NULL ) {
                 for ( int i = 0; i<360; i++ ) {
-                    tiles->drawTile(screenSurface, i, 35*(i%16), 35*(i/16) );
+                    tiles->drawTile( i, 34*(i%16), 34*(i/16) );
                 }
             }
         }
@@ -82,17 +85,4 @@ void CApp::shutdown() {
     
     //Quit SDL subsystems
     SDL_Quit();
-}
-
-SDL_Surface* CApp::loadMedia()
-{
-    SDL_Surface* surf;
-    surf = IMG_Load("resources/windrunner_by_lddmitry.jpg");
-    
-    if( !surf ) {
-        cout << "IMG_Load: " << SDL_GetError() << endl;
-        
-    }
-    
-    return surf;
 }

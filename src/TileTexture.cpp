@@ -60,9 +60,9 @@ TileTexture* TileTexture::loadTileTexture( const char* file ) {
     return tiles;
 }
 
-bool TileTexture::drawTile( SDL_Surface* target, int subimg, int x, int y ) {
-    if ( target == NULL ) {
-        cout << "Drawing to NULL target." << endl;
+bool TileTexture::drawTile( int subimg, int x, int y ) {
+    if ( screenSurface == NULL ) {
+        cout << "Drawing to NULL screenSurface!" << endl;
         return false;
     }
     
@@ -80,7 +80,7 @@ bool TileTexture::drawTile( SDL_Surface* target, int subimg, int x, int y ) {
     sourceRect.x = sourceRect.w * ( subimg % columns );
     sourceRect.y = sourceRect.h * ( (subimg / columns) % rows );
     
-    SDL_BlitSurface( tileSurface, &sourceRect, target, &targetRect );
+    SDL_BlitSurface( tileSurface, &sourceRect, screenSurface, &targetRect );
     
     return true;
 }

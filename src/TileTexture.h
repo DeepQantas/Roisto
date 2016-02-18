@@ -24,7 +24,7 @@ public:
     virtual ~TileTexture();
     
     static TileTexture* loadTileTexture( const char* file );
-    bool drawTile( SDL_Surface* target, int subimg, int x, int y );
+    bool drawTile( int subimg, int x, int y );
 private:
     SDL_Surface* tileSurface;
     SDL_Rect sourceRect;
