@@ -36,7 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/CApp.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/src/TileTexture.o
 
 
 # C Compiler Flags
@@ -66,12 +67,17 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roisto.exe: ${OBJECTFILES}
 ${OBJECTDIR}/CApp.o: CApp.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/C/MinGW/include/SDL2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CApp.o CApp.cpp
+	$(COMPILE.cc) -g -I/C/MinGW/include/SDL2 -Isrc -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CApp.o CApp.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/C/MinGW/include/SDL2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I/C/MinGW/include/SDL2 -Isrc -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/src/TileTexture.o: src/TileTexture.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/C/MinGW/include/SDL2 -Isrc -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/TileTexture.o src/TileTexture.cpp
 
 # Subprojects
 .build-subprojects:

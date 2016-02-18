@@ -18,14 +18,17 @@
 #include <cstdlib>
 #include <iostream>
 
-using namespace std;
-
 // SDL libraries
 #include <SDL.h>
 #include "SDL_image.h"
 
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
+// Our classes
+#include "TileTexture.h"
+
+const int SCREEN_WIDTH = 1024;
+const int SCREEN_HEIGHT = 768;
+
+using namespace std;
 
 
 class CApp {

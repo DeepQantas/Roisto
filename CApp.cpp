@@ -45,9 +45,17 @@ bool CApp::initializeSDL() {
             screenSurface = SDL_GetWindowSurface( window );
 
             // Load image and draw it on screen
-            SDL_Surface* surf = loadMedia();
-            SDL_BlitSurface( surf, NULL, screenSurface, NULL );
+            //SDL_Surface* surf = loadMedia();
+            //SDL_BlitSurface( surf, NULL, screenSurface, NULL );
             
+            // Create tiled texture
+            TileTexture* tiles = TileTexture::loadTileTexture("resources/terrain.png");
+            
+            if ( tiles != NULL ) {
+                for ( int i = 0; i<360; i++ ) {
+                    tiles->drawTile(screenSurface, i, 35*(i%16), 35*(i/16) );
+                }
+            }
         }
     }
     
