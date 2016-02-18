@@ -31,4 +31,5 @@
 # NetBeans
 ./build/*
 ./dist/*
+./nbproject/private/*
 private.xml
