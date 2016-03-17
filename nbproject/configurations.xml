@@ -4,9 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>CApp.h</itemPath>
       <itemPath>Globals.h</itemPath>
       <itemPath>src/TileTexture.h</itemPath>
-      <itemPath>CApp.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -15,9 +15,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>CApp.cpp</itemPath>
       <itemPath>Globals.cpp</itemPath>
       <itemPath>src/TileTexture.cpp</itemPath>
-      <itemPath>CApp.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
