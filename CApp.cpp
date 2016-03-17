@@ -15,12 +15,15 @@
 
 CApp::CApp() {
     window = NULL;
-    
     bRunning = true;
+    
+    startingTile = 0;
+    tileOffset = 0;
 }
 
 CApp::~CApp() {
 }
+
 
 bool CApp::initializeSDL() {
     // Initialize SDL
@@ -52,25 +55,61 @@ bool CApp::initializeSDL() {
             }
             
             // Create tiled texture
-            TileTexture* tiles = TileTexture::loadTileTexture("resources/terrain.png");
-            
-            if ( tiles != NULL ) {
-                for ( int i = 0; i<360; i++ ) {
-                    tiles->drawTile( i, 34*(i%16), 34*(i/16) );
-                }
-            }
+            tiles = TileTexture::loadTileTexture("resources/terrain.png");
         }
     }
     
     return true;
 }
 
-void CApp::update() {
-    if ( bRunning ) {
-        //Update the surface
-        SDL_UpdateWindowSurface( window );
+
+void CApp::handleEvents() {
+    SDL_Event e;
+    
+    while( SDL_PollEvent( &e ) != 0 )
+    {
+        switch (e.type) {
+            case SDL_QUIT:
+                bRunning = false;
+                break;
+            default:
+                break;
+        }
     }
 }
+
+
+void CApp::draw() {
+    // Dancing tiles or something
+    SDL_FillRect( screenSurface, NULL, 0 );
+    
+    if ( tiles != NULL ) 
+    {
+        for ( int i = 0; i<360; i++ ) 
+        {
+            tiles->drawTile( i + startingTile, 34*(i%16) - tileOffset, 34*(i/16) );
+        }
+        
+        tileOffset++;
+        if (tileOffset >= 34) 
+        {
+            tileOffset -= 34;
+            startingTile++;
+        }
+    } 
+    else 
+    {
+        // Texture missing
+        bRunning = false;
+    }
+    
+}
+
+void CApp::updateScreen() {
+    //Update the surface
+    SDL_UpdateWindowSurface( window );
+}
+
 
 void CApp::shutdown() {
     //Deallocate surface
