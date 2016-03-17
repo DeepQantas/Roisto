@@ -24,7 +24,6 @@
 
 // Our headers
 #include "Globals.h"
-#include "CApp.h"
 
 using namespace std;
 
